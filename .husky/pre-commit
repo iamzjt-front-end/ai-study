@@ -1,0 +1,29 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Running pre-commit checks..."
+
+# 检查 Python 文件格式（使用 black）
+if command -v black >/dev/null 2>&1; then
+  echo "🖤 Formatting check with black..."
+  black --check .
+else
+  echo "⚠️  black not found. Install with: pip install black"
+fi
+
+# 检查代码规范和潜在错误（使用 flake8）
+if command -v flake8 >/dev/null 2>&1; then
+  echo "🧪 Linting with flake8..."
+  flake8 .
+else
+  echo "⚠️  flake8 not found. Install with: pip install flake8"
+fi
+
+# 如果检查失败则中止提交
+if [ $? -ne 0 ]; then
+  echo "❌ Pre-commit checks failed. Please fix the issues before committing."
+  exit 1
+fi
+
+echo "✅ All checks passed! Proceeding with commit."
+exit 0
