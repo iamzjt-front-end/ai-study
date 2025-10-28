@@ -24,7 +24,7 @@ module.exports = {
     subject: '请输入简短描述：',
     body: '请输入详细说明（可选）：',
     footer: '请输入要关闭的 Issue（可选）：',
-    confirmCommit: '是否确认提交以上信息？（回车确认，n取消，e编辑）'
+    confirmCommit: '是否确认提交以上信息？（回车确认，n取消，e编辑，h显示帮助）'
   },
   allowCustomScopes: true,
   allowBreakingChanges: false,
