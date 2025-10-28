@@ -1,4 +1,3 @@
-
 # 1.变量 : 可变的量
 #   1. 作用是用来存储数据, 为了方便以后使用它做别的运算
 #   2. 定义变量时,不需要固定类型(弱类型: 动态数据类型)
@@ -29,8 +28,8 @@ print(h, y)
 #           则使用下划线连接 my_teacher 或 使用小驼峰 myTeacher
 #   5.建议: 变量名称 尽量见名知义, 一般使用英文 或 英语单词简写 或 拼音
 
-name = 'IamZJT'
-customId = '1'
+name = "IamZJT"
+customId = "1"
 
 
 # 4. 关键字
@@ -48,8 +47,5 @@ customId = '1'
 #  ]
 
 import keyword
+
 print(keyword.kwlist)
-
-
-
-

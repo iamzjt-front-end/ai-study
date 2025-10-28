@@ -1,5 +1,5 @@
-
 # 利用面向对象的思想写下面的程序：直接赋值
+
 
 # 1.小明穿着白色的特步运动鞋在奥林匹克公园跑步
 #   Person类
@@ -15,8 +15,6 @@ class Person:
 #      方法：find_pig(self)
 
 
-
-
 # 3. 定义一“圆”（Circle）类，圆心为“点”Point类，构造一圆，求圆的周长和面积，并判断某点与圆的关系
 # 圆类Circle:
 #     属性: 半径r,圆心(Point对象)
@@ -25,6 +23,7 @@ class Person:
 # 点类Point:
 #   属性: x,y
 #   方法: 与圆的关系(在圆内/在圆外/在圆上)
+
 
 class Circle:
     def __init__(self, r, point):
@@ -35,10 +34,6 @@ class Point:
     pass
 
 
-
-
-
-
 # 4. 使用面向对象的思想，创建下面的类，对象
 #
 #  有一个银行账户类 Account,
@@ -47,4 +42,3 @@ class Point:
 #           取钱 get_money(self,money)、
 #           查询余额 show_balance(self)。
 #    要求：取钱时，要判断余额是否充足，余额不够的时候要提示余额不足
-

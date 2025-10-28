@@ -1,4 +1,3 @@
-
 # random: 随机数
 
 # import keyword
@@ -13,4 +12,3 @@ import random
 
 # random.uniform(3, 5) ： 3~5之间的小数 （了解）
 # random.shuffle(list) : 随机打乱顺序  （了解）
-

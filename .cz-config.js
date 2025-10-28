@@ -10,7 +10,8 @@ module.exports = {
     { value: 'perf',     name: '⚡️ perf:      性能优化' },
     { value: 'test',     name: '✅ test:      添加或修改测试' },
     { value: 'chore',    name: '🔧 chore:     构建/依赖/脚本调整' },
-    { value: 'revert',   name: '⏪ revert:    回退提交' }  ],
+    { value: 'revert',   name: '⏪ revert:    回退提交' }
+  ],
   scopes: [
     { name: 'ui' },
     { name: 'api' },

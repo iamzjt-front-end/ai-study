@@ -1,5 +1,3 @@
-
-
 # 安装第三方包
 #  1.在pycharm的settings中去安装
 #  2.先导入包名,如果报错,鼠标悬停到包名,根据提示安装
@@ -18,7 +16,7 @@
 #   设置永久镜像:
 #       pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
-'''
+"""
 import requests
 
 import numpy as np
@@ -28,4 +26,4 @@ import matplotlib.pyplot as plt  # matplotlib
 import flask
 import tornado
 
-'''
+"""

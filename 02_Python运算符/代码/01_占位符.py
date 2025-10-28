@@ -1,11 +1,9 @@
-
 # f-string (重点掌握)
 name = "杰伦"
 age = 45
 salary = 1.4567
 
-print('大家好，我是杰伦，我今年45，我的年薪1.4567亿')
-
+print("大家好，我是杰伦，我今年45，我的年薪1.4567亿")
 
 
 # 占位符：（建议掌握）
@@ -15,11 +13,7 @@ print('大家好，我是杰伦，我今年45，我的年薪1.4567亿')
 #   %% : 百分号
 
 
-
-
-
 # 花括号占位符.format() （了解）
-
 
 
 # 练习：
@@ -31,9 +25,5 @@ print('大家好，我是杰伦，我今年45，我的年薪1.4567亿')
 
 name = input("姓名:")
 age = int(input("年龄:"))
-height = float(input('身高：'))
-weight = float(input('体重：'))
-
-
-
-
+height = float(input("身高："))
+weight = float(input("体重："))

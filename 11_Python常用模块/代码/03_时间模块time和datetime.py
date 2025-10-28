@@ -10,7 +10,6 @@ import time
 # 1us = 1000ns 纳秒
 
 
-
 # datetime: 日期时间,
 #   对time做了封装,比time更好用
 #   date: 日期,表示年月日
@@ -31,7 +30,7 @@ import datetime
 # strftime: 日期对象 => 日期字符串
 # strptime: 日期字符串 => 日期对象
 
-'''
+"""
 > # %y 两位数的年份表示（00-99）
 > # %Y 四位数的年份表示（0000-9999）
 > # %m 月份（01-12）
@@ -53,7 +52,7 @@ import datetime
 > # %x 本地相应的日期表示
 > # %X 本地相应的时间表示
 > # %% %号本身
-'''
+"""
 
 # 日期对象 <==> 时间戳 (了解)
 # print(dt.timestamp())  # 1721028409.881082
@@ -69,9 +68,4 @@ d2 = datetime.datetime(2030, 10, 10)
 d3 = datetime.datetime(2020, 3, 3)
 
 
-
 # 练习1: 求7天后的日期
-
-
-
-

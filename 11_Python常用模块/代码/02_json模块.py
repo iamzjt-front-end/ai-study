@@ -1,4 +1,3 @@
-
 import json
 
 # json: 一种表示数据的格式
@@ -11,8 +10,5 @@ import json
 #   字符串 => Python字典
 
 
-
 # json序列化:  (了解)
 #    Python字典 => 字符串
-
-

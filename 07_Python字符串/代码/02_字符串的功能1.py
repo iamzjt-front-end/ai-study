@@ -1,4 +1,3 @@
-
 # 字符串的功能
 
 # count(): 计数,统计某子串出现的次数
@@ -25,7 +24,6 @@ s = "hello hello hello"
 # print('heLLO woRLd'.swapcase())  # 大小写切换: 大写变成小写,小写变成大写  'HEllo WOrlD'
 
 
-
 # 查找
 #   find(): 查找指定子串第一次出现的下标位置,如果不存在则返回-1
 #  rfind(): 从右往左查找指定子串第一次出现的下标位置,如果不存在则返回-1
@@ -34,11 +32,9 @@ s = "hello hello hello"
 s = "ikun is very very very handsome"
 
 
-
-
 # 练习:
 # 1.已知字符串：“this is a test of Python”
-s = 'this is a test of Python'
+s = "this is a test of Python"
 
 # a.统计该字符串中字母s出现的次数: count()
 # b.取出子字符串“test”, 用切片,不能数: 使用find(),len()
@@ -52,20 +48,18 @@ s1 = "ikun  is very very very handsome"
 
 
 # splitlines(): 按行拆分
-s2 = '''床前明月光,
+s2 = """床前明月光,
 疑是地上霜.
 举头望明月,
-低头思故乡.'''
-
+低头思故乡."""
 
 
 # 合并: join : 会得到字符串类型
 #   将列表中的字符串拼接
-n = ['床前明月光,', '疑是地上霜.', '举头望明月,', '低头思故乡.']
+n = ["床前明月光,", "疑是地上霜.", "举头望明月,", "低头思故乡."]
 
 
 # 替换: replace() : 默认替换所有匹配的
-
 
 
 # 练习
@@ -73,10 +67,5 @@ n = ['床前明月光,', '疑是地上霜.', '举头望明月,', '低头思故�
 # d.将其中的"test"替换为"exam" : replace()
 
 
-
 # 2.去掉字符串123@zh@qq.com中的@;
 # 提示: replace()  或者 split()+join()
-
-
-
-

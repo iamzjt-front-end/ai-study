@@ -14,7 +14,6 @@
 # print("唱", "跳", "rap", sep="+")
 
 
-
 # 2.输入: input()
 #  方便我们测试代码时自定义输入值
 # Python中比较常见的3种类型: int整数, float小数, str字符串 "hello"
@@ -33,14 +32,12 @@
 # print(int(val) * 3.14)
 
 
-
-
 # 练习:
 # 1、输入1个名字, 用一个变量接收该名字，然后输出该变量的值
 # 2、输入任意两个数字,计算他们的和
 # name = input('请输入你的名字：')
 # print(name)
 
-a = int(input('a:'))
-b = int(input('b:'))
-print('a+b', a + b, sep='=')
+a = int(input("a:"))
+b = int(input("b:"))
+print("a+b", a + b, sep="=")

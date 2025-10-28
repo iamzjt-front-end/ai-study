@@ -1,17 +1,9 @@
-
 # 练习: 下面是斗鱼的接口数据，请得到每个主播的名字nn和图像rs1
 douyu = {
     "code": 0,
     "msg": "success",
     "data": {
-        "ct": {
-            "iv": 1,
-            "ivcv": 1,
-            "tag": 0,
-            "tn": "",
-            "vmcrr": 0,
-            "vmcm": ""
-        },
+        "ct": {"iv": 1, "ivcv": 1, "tag": 0, "tn": "", "vmcrr": 0, "vmcm": ""},
         "rl": [
             {
                 "rid": 3853457,
@@ -46,6 +38,6 @@ douyu = {
                 "rs16": "https://rpic.douyucdn.cn/live-cover/roomCover/2021/01/31/30433e745e15347b71485afbb7049f0f_big.png/dy1",
             },
         ],
-        "pgcnt": 6
-    }
+        "pgcnt": 6,
+    },
 }

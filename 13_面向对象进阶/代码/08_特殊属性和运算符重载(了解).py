@@ -1,16 +1,16 @@
-
 # __slots__ : 了解,扩展
+
 
 class Person:
     # 限制你的属性名
-    __slots__ = ['name', 'age', 'sex']
+    __slots__ = ["name", "age", "sex"]
 
     def __init__(self, name, age):
         self.name = name
         self.age = age
 
 
-p = Person('小明', 10)
+p = Person("小明", 10)
 p.sex = "男"  # 给对象p添加一个属性
 print(p.name, p.age, p.sex)
 
@@ -25,10 +25,10 @@ class Dog:
         self.age = age
 
     def run(self):
-        print('跑步')
+        print("跑步")
 
 
-d = Dog('旺财', 3)
+d = Dog("旺财", 3)
 
 # print(d.__class__)
 # print(Dog.__class__)
@@ -58,7 +58,7 @@ class Number:
     #     return f' -- {self.n} -- '
 
     def __repr__(self):
-        return f' ** {self.n} ** '
+        return f" ** {self.n} ** "
 
 
 n1 = Number(3)
@@ -67,4 +67,3 @@ print(n1 + n2)  # 7
 
 
 print([n1, n2])
-

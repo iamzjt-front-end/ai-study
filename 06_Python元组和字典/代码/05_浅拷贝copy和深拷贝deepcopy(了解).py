@@ -1,4 +1,3 @@
-
 # Python
 #   不可变类型: int,float,str,tuple,bool,NoneType
 #    可变类型: list, set, dict
@@ -9,7 +8,6 @@
 # 可变类型 (有关联)
 
 
-
 # 深浅拷贝的可视化视图
 #  http://pythontutor.com/live.html#mode=edit
 
@@ -17,5 +15,3 @@
 
 
 # deepcopy 深拷贝
-
-
