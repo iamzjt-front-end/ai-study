@@ -12,7 +12,6 @@ module.exports = {
     { value: 'chore', name: '🔧 chore:    构建/依赖/脚本调整' },
     { value: 'revert', name: '⏪ revert:   回退提交' }
   ],
-
   scopes: [
     { name: 'ui' },
     { name: 'api' },
@@ -20,7 +19,6 @@ module.exports = {
     { name: 'config' },
     { name: 'docs' }
   ],
-
   messages: {
     type: '请选择提交类型（带表情）：',
     scope: '请输入影响范围（可选，比如模块名）：',
@@ -29,7 +27,6 @@ module.exports = {
     footer: '请输入要关闭的 Issue（可选）：',
     confirmCommit: '是否确认提交以上信息？（回车确认，n取消，e编辑）'
   },
-
   allowCustomScopes: true,
   allowBreakingChanges: false,
   skipQuestions: ['body', 'footer', 'breaking'],
