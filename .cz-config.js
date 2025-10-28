@@ -13,15 +13,6 @@ module.exports = {
     { value: 'revert', name: '⏪ revert:   回退提交' }
   ],
 
-  messages: {
-    type: '请选择提交类型（带表情）：',
-    scope: '请输入影响范围（可选，比如模块名）：',
-    subject: '请输入简短描述（建议一句话）：',
-    body: '请输入详细说明（可选）：',
-    footer: '请输入要关闭的 Issue（可选）：',
-    confirmCommit: '确认提交吗？'
-  },
-
   scopes: [
     { name: 'ui' },
     { name: 'api' },
@@ -30,8 +21,17 @@ module.exports = {
     { name: 'docs' }
   ],
 
+  messages: {
+    type: '请选择提交类型（带表情）：',
+    scope: '请输入影响范围（可选，比如模块名）：',
+    subject: '请输入简短描述（建议一句话）：',
+    body: '请输入详细说明（可选）：',
+    footer: '请输入要关闭的 Issue（可选）：',
+    confirmCommit: '是否确认提交以上信息？（回车确认，n取消，e编辑）'
+  },
+
   allowCustomScopes: true,
-  allowBreakingChanges: false, // ❌ 禁用“BREAKING CHANGES”功能
-  skipQuestions: ['body', 'footer', 'breaking'], // ✅ 跳过对应问题
+  allowBreakingChanges: false,
+  skipQuestions: ['body', 'footer', 'breaking'],
   subjectLimit: 100
 };
