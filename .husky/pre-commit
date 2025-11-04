@@ -1,21 +1,26 @@
-#!/usr/bin/env sh
-# -*- coding: utf-8 -*-
-
 echo "🔍 Running pre-commit checks for changed Python files..."
-
-# 确保脚本出错时立即退出
 set -e
 
-# 检查 black 是否安装
+# 自动安装 black（可留可去）
 if ! command -v black >/dev/null 2>&1; then
-  echo "⚠️  black 未安装。请运行: pip install black"
-  exit 1
+  echo "⚠️  未检测到 black，正在自动安装..."
+  if command -v pip >/dev/null 2>&1; then
+    pip install --quiet black
+  elif command -v pip3 >/dev/null 2>&1; then
+    pip3 install --quiet black
+  else
+    echo "❌ 未找到 pip，请先安装 Python/pip"
+    exit 1
+  fi
 fi
 
-# 获取暂存区中修改或新增的 Python 文件列表
-CHANGED_FILES=$(git diff --cached --name-only --diff-filter=AM | grep -E '\.py$' || true)
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=AM | grep -E '\.py$' || true)
+if [ -z "$STAGED_FILES" ]; then
+  CHANGED_FILES=$(git diff --name-only --diff-filter=AM | grep -E '\.py$' || true)
+else
+  CHANGED_FILES=$STAGED_FILES
+fi
 
-# 如果没有 Python 文件改动，就直接跳过
 if [ -z "$CHANGED_FILES" ]; then
   echo "✅ 没有需要检查的 Python 文件，跳过格式检查。"
   exit 0
@@ -25,26 +30,14 @@ echo "🖤 检查以下文件格式："
 echo "$CHANGED_FILES"
 echo "-----------------------------------"
 
-# 先检查格式是否符合规范
-black --check "$CHANGED_FILES" >/dev/null 2>&1
-
-# 如果格式不符合，则自动格式化并重新暂存
-if [ $? -ne 0 ]; then
+if ! echo "$CHANGED_FILES" | xargs black --check >/dev/null 2>&1; then
   echo "💥 检测到格式问题，正在自动格式化..."
-  black "$CHANGED_FILES"
-
-  echo "✨ 重新暂存格式化后的文件..."
-  git add "$CHANGED_FILES"
+  echo "$CHANGED_FILES" | xargs black
+  echo "$CHANGED_FILES" | xargs git add
   echo "✅ 已自动修复格式问题！"
 else
   echo "✅ 所有文件格式规范。"
 fi
-
-# （可选）运行 flake8 等静态检查
-# if command -v flake8 >/dev/null 2>&1; then
-#   echo "🧪 运行 flake8..."
-#   flake8 $CHANGED_FILES
-# fi
 
 echo "🚀 提交通过！"
 exit 0
