@@ -11,23 +11,44 @@
 # 	bytes【字节】二进制， 如：b'hello'
 
 # int 整数
+a = 10
+print(a, type(a))
 
 # float: 小数
+b = 3.14
+print(b, type(b))
 
 # str: 字符串 string
+c = "hello"
+print(c, type(c))
 
 # bool: 布尔类型, True(1), False(0)
+d = True
+e = False
+print(d, type(d))
+print(e, type(e))
 
 # NoneType: 空, None
-
+f = None
+print(f, type(f))
 
 # list：列表，数组
+g = [1, 2, 3]
+print(g, type(g))
 
 # tuple： 元组，不可变的列表
+h = (1, 2, 3)
+print(h, type(h))
 
 # dict: 字典，dictionary
 #     key: value  : 键值对
+i = {"a": 1, "b": 2.22, "c": "你好"}
+print(i, type(i))
 
 # set: 集合（了解）,唯一
+j = {1, 2, 3, 3, 3, 4}
+print(j, type(j))
 
 # bytes: 字节类型，二进制类型
+k = b"hello"
+print(k, type(k))
