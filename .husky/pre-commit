@@ -1,43 +1,28 @@
-echo "🔍 Running pre-commit checks for changed Python files..."
-set -e
+#!/usr/bin/env sh
 
-# 自动安装 black（可留可去）
-if ! command -v black >/dev/null 2>&1; then
-  echo "⚠️  未检测到 black，正在自动安装..."
-  if command -v pip >/dev/null 2>&1; then
-    pip install --quiet black
-  elif command -v pip3 >/dev/null 2>&1; then
-    pip3 install --quiet black
-  else
-    echo "❌ 未找到 pip，请先安装 Python/pip"
-    exit 1
-  fi
-fi
+echo "🔍 Running pre-commit checks..."
 
-STAGED_FILES=$(git diff --cached --name-only --diff-filter=AM | grep -E '\.py$' || true)
-if [ -z "$STAGED_FILES" ]; then
-  CHANGED_FILES=$(git diff --name-only --diff-filter=AM | grep -E '\.py$' || true)
+# 检查 Python 文件格式（使用 black）
+if command -v black >/dev/null 2>&1; then
+  echo "🖤 Formatting check with black..."
+  black --check .
 else
-  CHANGED_FILES=$STAGED_FILES
+  echo "⚠️  black not found. Install with: pip install black"
 fi
 
-if [ -z "$CHANGED_FILES" ]; then
-  echo "✅ 没有需要检查的 Python 文件，跳过格式检查。"
-  exit 0
+# 检查代码规范和潜在错误（使用 flake8）
+#if command -v flake8 >/dev/null 2>&1; then
+#  echo "🧪 Linting with flake8..."
+#  flake8 .
+#else
+#  echo "⚠️  flake8 not found. Install with: pip install flake8"
+#fi
+
+# 如果检查失败则中止提交
+if [ $? -ne 0 ]; then
+  echo "❌ Pre-commit checks failed. Please fix the issues before committing."
+  exit 1
 fi
 
-echo "🖤 检查以下文件格式："
-echo "$CHANGED_FILES"
-echo "-----------------------------------"
-
-if ! echo "$CHANGED_FILES" | xargs black --check >/dev/null 2>&1; then
-  echo "💥 检测到格式问题，正在自动格式化..."
-  echo "$CHANGED_FILES" | xargs black
-  echo "$CHANGED_FILES" | xargs git add
-  echo "✅ 已自动修复格式问题！"
-else
-  echo "✅ 所有文件格式规范。"
-fi
-
-echo "🚀 提交通过！"
+echo "✅ All checks passed! Proceeding with commit."
 exit 0
